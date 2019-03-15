@@ -11,12 +11,12 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CandyDetailViewControllerDelegate{
     
     //MARK: Variables
+    var totalProducts = [Candy]()
     //convenient variables
     var totalPrice: Double = 0.0
-    var candy: Candy?
     //Data for table and candys
-    let data: [Candy] = [   Candy(name: "Cocolate",price: 21.2),
-                            Candy(name: "Paleta", price: 10.0)]
+    let data: [Candy] = [   Candy(name: "Chocolate",price: 21.2, detail: "Dulce de cacao a base de leche"),
+                            Candy(name: "Paleta", price: 10.0, detail: "Caramelo de diferentes sabores queasfasfasfasfasfsafasfasfasfasfasfasfsa comen mucho los niños")]
     //MARK: Oulets
     @IBOutlet weak var tableView: UITableView!
     
@@ -40,7 +40,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //navigation
         self.navigationItem.title = "Dulces principales"
         //label
-        self.totalLabel.text = "\(totalPrice)$"
+        refreshPriceLabel()
     }
     
     func setupTableView(){
@@ -49,10 +49,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.tableView.dataSource = self
     }
     
-    func refreshPriceLabel(){
-        self.totalLabel.text = "\(totalPrice)$"
+    func getTotalPrice(_ array:[Candy]) -> Double{
+        var returnValue:Double = 0
+        for element in array{
+            returnValue += element.price
+        }
+        
+        return returnValue
     }
     
+    func refreshPriceLabel(){
+        totalLabel.text = "\(getTotalPrice(totalProducts).truncate(places: 2))"
+    }
     //MARK: Table view protocols
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
@@ -61,31 +69,35 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let candyCell = tableView.dequeueReusableCell(withIdentifier: "candyCell", for: indexPath)
         candyCell.textLabel?.text = data[indexPath.row].name
-        candyCell.backgroundColor = .clear
+        candyCell.detailTextLabel?.text = "\(data[indexPath.row].price)" + "$"
+        candyCell.imageView?.image = UIImage(named: data[indexPath.row].name)
+        candyCell.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+        candyCell.detailTextLabel?.backgroundColor = .clear
+        candyCell.textLabel?.backgroundColor = .clear
         candyCell.layer.cornerRadius = 10
         return candyCell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        candy = data[indexPath.row]
-    }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     //MARK: pass information
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showCandyDetail"{
             guard let nextView = segue.destination as? CandyDetailViewController else { return }
             nextView.delegate = self
-            guard let insCandy = candy else{ return }
-            nextView.selectedCandy = insCandy
+            guard let selectRow = tableView.indexPathForSelectedRow?.row else { return }
+            nextView.selectedCandy = data[selectRow]
         }
     }
     //MARK: delegate protocols candy view
-    func theItemAddedToCar() {
-        totalPrice += 1
+    func theItemAddedToCar(_ candy: [Candy]) {
+        for element in candy{
+            totalProducts.append(element)
+        }
     }
 }
 

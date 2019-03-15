@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2134E7D4223C416700C1ACDB /* DoubleExtencion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2134E7D3223C416700C1ACDB /* DoubleExtencion.swift */; };
+		2134E7D6223C4FF300C1ACDB /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2134E7D5223C4FF300C1ACDB /* CarViewController.swift */; };
 		21AD91D522388000004CB0C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AD91D422388000004CB0C4 /* AppDelegate.swift */; };
 		21AD91D722388000004CB0C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AD91D622388000004CB0C4 /* ViewController.swift */; };
 		21AD91DA22388000004CB0C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21AD91D822388000004CB0C4 /* Main.storyboard */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2134E7D3223C416700C1ACDB /* DoubleExtencion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtencion.swift; sourceTree = "<group>"; };
+		2134E7D5223C4FF300C1ACDB /* CarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewController.swift; sourceTree = "<group>"; };
 		21AD91D122388000004CB0C4 /* mini-shop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mini-shop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21AD91D422388000004CB0C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21AD91D622388000004CB0C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +73,8 @@
 				21AD91E6223882A4004CB0C4 /* ColorExtension.swift */,
 				21AD91E822388AB2004CB0C4 /* CandyModel.swift */,
 				21F31930223890DB00CACE5B /* CandyDetailViewController.swift */,
+				2134E7D3223C416700C1ACDB /* DoubleExtencion.swift */,
+				2134E7D5223C4FF300C1ACDB /* CarViewController.swift */,
 			);
 			path = "mini-shop";
 			sourceTree = "<group>";
@@ -147,7 +153,9 @@
 				21AD91E7223882A4004CB0C4 /* ColorExtension.swift in Sources */,
 				21F31931223890DB00CACE5B /* CandyDetailViewController.swift in Sources */,
 				21AD91D722388000004CB0C4 /* ViewController.swift in Sources */,
+				2134E7D6223C4FF300C1ACDB /* CarViewController.swift in Sources */,
 				21AD91D522388000004CB0C4 /* AppDelegate.swift in Sources */,
+				2134E7D4223C416700C1ACDB /* DoubleExtencion.swift in Sources */,
 				21AD91E922388AB2004CB0C4 /* CandyModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

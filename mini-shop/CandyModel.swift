@@ -9,4 +9,5 @@
 struct Candy {
     var name: String
     var price: Double
+    var detail: String
 }
