@@ -22,32 +22,29 @@ class CarViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         setupUI()
     }
     
     func setupUI(){
         tableView.backgroundColor = .clear
+        
+        navigationItem.title = "Carrito de compras"
     }
     
     //MARK: protocols for table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let numberOfProducts = listProducts?.count else{ return 0 }
-        return numberOfProducts
+        guard let list = listProducts else { return 0 }
+        return list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "carCell", for: indexPath)
-        
         guard let list = listProducts else { return UITableViewCell() }
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cartCell", for: indexPath)
         cell.textLabel?.text = list[indexPath.row].name
-        cell.detailTextLabel?.text = list[indexPath.row].detail
         cell.imageView?.image = UIImage(named: list[indexPath.row].name)
-        
         cell.backgroundColor = UIColor.white.withAlphaComponent(0.5)
-        
         
         return cell
     }

@@ -17,6 +17,8 @@
 		21AD91E7223882A4004CB0C4 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AD91E6223882A4004CB0C4 /* ColorExtension.swift */; };
 		21AD91E922388AB2004CB0C4 /* CandyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AD91E822388AB2004CB0C4 /* CandyModel.swift */; };
 		21F31931223890DB00CACE5B /* CandyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F31930223890DB00CACE5B /* CandyDetailViewController.swift */; };
+		295D1B1C223D5D1900F542C5 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295D1B1A223D5D1900F542C5 /* CartTableViewCell.swift */; };
+		295D1B1D223D5D1900F542C5 /* CartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 295D1B1B223D5D1900F542C5 /* CartTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		21AD91E6223882A4004CB0C4 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		21AD91E822388AB2004CB0C4 /* CandyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandyModel.swift; sourceTree = "<group>"; };
 		21F31930223890DB00CACE5B /* CandyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandyDetailViewController.swift; sourceTree = "<group>"; };
+		295D1B1A223D5D1900F542C5 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		295D1B1B223D5D1900F542C5 /* CartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,19 +68,53 @@
 		21AD91D322388000004CB0C4 /* mini-shop */ = {
 			isa = PBXGroup;
 			children = (
+				295D1B1E223D5D2000F542C5 /* PerCellCart */,
+				295D1B17223D559100F542C5 /* Models */,
+				295D1B16223D557200F542C5 /* Extencion */,
+				295D1B15223D553C00F542C5 /* Controllers */,
 				21AD91D422388000004CB0C4 /* AppDelegate.swift */,
-				21AD91D622388000004CB0C4 /* ViewController.swift */,
 				21AD91D822388000004CB0C4 /* Main.storyboard */,
 				21AD91DB22388001004CB0C4 /* Assets.xcassets */,
 				21AD91DD22388001004CB0C4 /* LaunchScreen.storyboard */,
 				21AD91E022388001004CB0C4 /* Info.plist */,
-				21AD91E6223882A4004CB0C4 /* ColorExtension.swift */,
-				21AD91E822388AB2004CB0C4 /* CandyModel.swift */,
-				21F31930223890DB00CACE5B /* CandyDetailViewController.swift */,
-				2134E7D3223C416700C1ACDB /* DoubleExtencion.swift */,
-				2134E7D5223C4FF300C1ACDB /* CarViewController.swift */,
 			);
 			path = "mini-shop";
+			sourceTree = "<group>";
+		};
+		295D1B15223D553C00F542C5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				21AD91D622388000004CB0C4 /* ViewController.swift */,
+				21F31930223890DB00CACE5B /* CandyDetailViewController.swift */,
+				2134E7D5223C4FF300C1ACDB /* CarViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		295D1B16223D557200F542C5 /* Extencion */ = {
+			isa = PBXGroup;
+			children = (
+				2134E7D3223C416700C1ACDB /* DoubleExtencion.swift */,
+				21AD91E6223882A4004CB0C4 /* ColorExtension.swift */,
+			);
+			path = Extencion;
+			sourceTree = "<group>";
+		};
+		295D1B17223D559100F542C5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				21AD91E822388AB2004CB0C4 /* CandyModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		295D1B1E223D5D2000F542C5 /* PerCellCart */ = {
+			isa = PBXGroup;
+			children = (
+				295D1B1A223D5D1900F542C5 /* CartTableViewCell.swift */,
+				295D1B1B223D5D1900F542C5 /* CartTableViewCell.xib */,
+			);
+			path = PerCellCart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +178,7 @@
 				21AD91DF22388001004CB0C4 /* LaunchScreen.storyboard in Resources */,
 				21AD91DC22388001004CB0C4 /* Assets.xcassets in Resources */,
 				21AD91DA22388000004CB0C4 /* Main.storyboard in Resources */,
+				295D1B1D223D5D1900F542C5 /* CartTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +196,7 @@
 				21AD91D522388000004CB0C4 /* AppDelegate.swift in Sources */,
 				2134E7D4223C416700C1ACDB /* DoubleExtencion.swift in Sources */,
 				21AD91E922388AB2004CB0C4 /* CandyModel.swift in Sources */,
+				295D1B1C223D5D1900F542C5 /* CartTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
