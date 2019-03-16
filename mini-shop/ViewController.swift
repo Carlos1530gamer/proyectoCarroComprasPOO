@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CandyDetailViewControllerDelegate{
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CandyDetailViewControllerDelegate, CarViewControllerDelegate{
+    
     
     //MARK: Variables
     var totalProducts = [Candy]()
@@ -16,7 +17,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var totalPrice: Double = 0.0
     //Data for table and candys
     let data: [Candy] = [   Candy(name: "Chocolate",price: 21.2, detail: "Dulce de cacao a base de leche"),
-                            Candy(name: "Paleta", price: 10.0, detail: "Caramelo de diferentes sabores queasfasfasfasfasfsafasfasfasfasfasfasfsa comen mucho los niños")]
+                            Candy(name: "Paleta", price: 10.0, detail: "Caramelo de diferentes sabores que comen mucho los niños")]
     //MARK: Oulets
     @IBOutlet weak var tableView: UITableView!
     
@@ -79,7 +80,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 100
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -92,12 +93,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             guard let selectRow = tableView.indexPathForSelectedRow?.row else { return }
             nextView.selectedCandy = data[selectRow]
         }
+        
+        if segue.identifier == "showCar"{
+            guard let nextVC = segue.destination as? CarViewController else { return }
+            nextVC.delegate = self
+            nextVC.listProducts = totalProducts
+        }
     }
     //MARK: delegate protocols candy view
     func theItemAddedToCar(_ candy: [Candy]) {
         for element in candy{
             totalProducts.append(element)
         }
+    }
+    
+    //MARK: delegate protocols car view
+    func passBuyCar() {
+        totalProducts = [Candy]()
+        refreshPriceLabel()
     }
 }
 

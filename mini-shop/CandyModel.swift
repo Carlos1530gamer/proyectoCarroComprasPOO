@@ -6,7 +6,7 @@
 //  Copyright © 2019 equipo. All rights reserved.
 //
 
-struct Candy {
+struct Candy :Equatable{
     var name: String
     var price: Double
     var detail: String
