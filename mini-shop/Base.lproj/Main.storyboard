@@ -29,6 +29,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buyButtonHasPressed:" destination="GcN-LM-jIU" eventType="touchUpInside" id="4Z9-3l-cFV"/>
+                                    <action selector="procesarDidPressed:" destination="u9u-Jk-7ZB" eventType="touchUpInside" id="VNJ-df-3pm"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d0q-01-ZE1">

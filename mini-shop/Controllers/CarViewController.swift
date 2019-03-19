@@ -53,5 +53,9 @@ class CarViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         return 100
     }
     
-
+    @IBAction func procesarDidPressed(_ sender: UIButton) {
+        self.delegate?.passBuyCar()
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }
